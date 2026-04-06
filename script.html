@@ -1,24 +1,128 @@
-document.documentElement.innerHTML = `
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: radial-gradient(circle at center, #0a0a0a, #000000); font-family: 'Courier New', monospace; color: #ffffff; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
-    .container { text-align: center; padding: 80px 20px 20px; max-width: 800px; width: 100%; }
-    .logo { width: 300px; margin-bottom: 25px; }
-    .message { font-size: 28px; color: #ff0000; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 9px; text-shadow: 0 0 12px red; }
-    .line { width: 60%; height: 2px; background: linear-gradient(to right, transparent, red, transparent); margin: 20px auto; }
-    .quote { font-size: 34px; line-height: 1.7; color: #e0e0e0; padding: 0 15px; }
-    .footer { margin-top: 25px; font-size: 14px; color: #666; }
-    .footer span { color: white; }
-    .btn-audio { margin-top: 20px; padding: 10px 20px; background: transparent; border: 1px solid red; color: red; cursor: pointer; font-family: inherit; letter-spacing: 2px; transition: 0.3s; }
-    .btn-audio:hover { background: red; color: black; box-shadow: 0 0 10px red; }
-</style>
-<div class="container">
-    <audio id="bgm" loop><source src="https://d4nughost.github.io/17.Agustus.mp3/17.Agustus.mp3" type="audio/mpeg"></audio>
-    <img src="https://danu-boy.github.io/anak/kampung.jpg" alt="Logo" class="logo">
-    <div class="message">Hacked By D4NU GHOST</div>
-    <div class="line"></div>
-    <div class="quote">Hubungan kita kayak database yang aku jaga baik-baik… tapi kamu datang cuma buat inject error, terus ninggalin semuanya berantakan.</div>
-    <div class="line"></div>
-    <button class="btn-audio" onclick="document.getElementById('bgm').play()">PLAY SOUND</button>
-    <div class="footer"><span>#NO SYSTEM IS SAFE</span></div>
-</div>`;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d4nu ghost</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #0a0a0a, #000000);
+            font-family: 'Courier New', monospace;
+            color: #ffffff;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            text-align: center;
+            padding: 80px 20px 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 300px;
+            margin-bottom: 25px;
+        }
+
+        .message {
+            font-size: 28px;
+            color: #ff0000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 9px;
+            text-shadow: 0 0 12px red;
+        }
+
+        .line {
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, red, transparent);
+            margin: 20px auto;
+        }
+
+        .quote {
+            font-size: 34px;
+            line-height: 1.7;
+            color: #e0e0e0;
+            padding: 0 15px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer span {
+            color: white;
+        }
+
+        /* BUTTON AUDIO */
+        .btn-audio {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid red;
+            color: red;
+            cursor: pointer;
+            font-family: inherit;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-audio:hover {
+            background: red;
+            color: black;
+            box-shadow: 0 0 10px red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- AUDIO -->
+    <audio id="bgm" loop>
+        <source src="https://d4nughost.github.io/17.Agustus.mp3/17.Agustus.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <img src="https://danu-boy.github.io/anak/kampung.jpg" alt="Logo" class="logo">
+
+        <div class="message">Hacked By D4NU GHOST</div>
+
+        <div class="line"></div>
+
+        <div class="quote">
+            Hubungan kita kayak database yang aku jaga baik-baik… tapi kamu datang cuma buat inject error, terus ninggalin semuanya berantakan.<br>
+        </div>
+
+        <div class="line"></div>
+
+        <!-- BUTTON -->
+        <button class="btn-audio" onclick="playAudio()">PLAY SOUND</button>
+
+        <div class="footer">
+            <span>#NO SYSTEM IS SAFE</span>
+        </div>
+    </div>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("bgm");
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
